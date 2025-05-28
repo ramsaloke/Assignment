@@ -3,8 +3,8 @@ import './Sidebar.css';
 import navigationLinks from '../data/navigationLinks';
 
 const Sidebar = () => {
-  // Find the setting link and remove it from the original navigation
-  let settingLink = null;
+
+  let settingLink = null
   const filteredNavLinks = navigationLinks.map(section => {
     if (section.section === 'Tools') {
       const filteredLinks = section.links.filter(link => {
