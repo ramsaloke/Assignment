@@ -1,0 +1,149 @@
+.dashboard-main-content {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  background-color: var(--bg-light);
+  width: 100%;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.dashboard-header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.dashboard-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.time-filter {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: var(--text-primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+.time-filter .selected {
+  margin-right: 8px;
+  font-weight: 500;
+}
+
+.dropdown-arrow {
+  font-size: 10px;
+  color: var(--text-tertiary);
+}
+
+.navigation-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.nav-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.dashboard-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.top-row, .bottom-row {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+}
+
+.top-row > div, .bottom-row > div {
+  flex: 1;
+}
+
+/* Set specific background colors for each section */
+.calendar-container .card {
+  background-color: white;
+}
+
+.anatomy-section.card,
+.health-status-cards .card,
+.upcoming-schedule.card,
+.activity-feed.card {
+  background-color: var(--bg-light);
+}
+
+.anatomy-container {
+  grid-area: anatomy;
+  display: flex;
+  gap: 24px;
+  background-color: var(--bg-light);
+}
+
+.calendar-container {
+  grid-area: calendar;
+  background-color: white;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.schedule-container {
+  grid-area: schedule;
+  background-color: var(--bg-light);
+}
+
+.activity-container {
+  grid-area: activity;
+  background-color: var(--bg-light);
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "anatomy"
+      "calendar"
+      "schedule"
+      "activity";
+  }
+  
+  .anatomy-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .dashboard-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

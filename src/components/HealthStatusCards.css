@@ -1,0 +1,93 @@
+.health-status-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 250px;
+}
+
+.health-card {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+}
+
+.health-card-icon {
+  margin-right: 16px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(95, 106, 196, 0.1);
+  border-radius: 50%;
+  padding: 6px;
+  font-size: 24px;
+}
+
+.health-card-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.health-card-content {
+  flex: 1;
+}
+
+.health-card-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+.health-card-header h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.health-card-date {
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+.health-progress-bar {
+  height: 6px;
+  background-color: #f0f0f0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.health-progress {
+  height: 100%;
+  border-radius: 3px;
+}
+
+.health-progress.healthy {
+  background-color: var(--healthy-green);
+}
+
+.health-progress.warning {
+  background-color: var(--warning-red);
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .health-status-cards {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .health-card {
+    flex: 1;
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .health-status-cards {
+    flex-direction: column;
+  }
+}
